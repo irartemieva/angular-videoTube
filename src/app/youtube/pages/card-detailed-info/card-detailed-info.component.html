@@ -1,0 +1,17 @@
+<!-- <p>card-detailed-info works!</p>
+<div *ngIf="searchItem$ | async as item">
+  <h3>{{ item.snippet.thumbnails['default'].url }}</h3>
+</div> -->
+
+<mat-card *ngIf="searchItem$ | async as item" class="example-card" [appCardBorder]="item.snippet.publishedAt">
+  <img mat-card-image src="{{item.snippet.thumbnails['standard'].url}}" alt="">
+  <div class="card-statistics">
+      <p>{{item.statistics.viewCount}}</p>
+      <p>{{item.statistics.likeCount}}</p>
+      <p>{{item.statistics.favoriteCount}}</p>
+      <p>{{item.statistics.commentCount}}</p>
+  </div>
+  <mat-card-content>
+      <p>{{ item.snippet.title }}</p>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { 
+  height: 100%; 
+}
+body { 
+  margin: 0; 
+  font-family: "Montserrat Alternates", "Helvetica Neue", sans-serif; 
+  background-color: rgb(240, 215, 187, 0.5);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(101, 77, 58, 0.5),
+    rgba(182, 132, 76, 0.5)
+  ), url("assets/background.png");
+  background-repeat: repeat-y;
+  background-size: cover;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-infix {
+  background-color: #ffedd9;
+  border-radius: 8px;
+} 
+
+.mat-raised-button {
+  background-color: #009185;
+  font-family: "Montserrat Alternates", "Helvetica Neue", sans-serif; 
+}
+
+.mat-input-element {
+  font-family: "Montserrat Alternates", "Helvetica Neue", sans-serif;
+}

@@ -1,0 +1,18 @@
+.search-resuts {
+    //display: flex;
+    //flex-wrap: wrap;
+    justify-content: center;
+    //flex-direction: row;
+    //padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.flex-card {
+    //display: flex;
+    //list-style: none;
+    flex: 0 0 21%; /* explanation below */
+    margin: 5px;
+    //height: 100%;
+  
+  }

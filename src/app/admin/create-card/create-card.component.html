@@ -1,0 +1,63 @@
+<div class="create-a-new-card-form">
+    <form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
+        <mat-card-header>
+            <mat-card-title>Create a new card</mat-card-title>
+        </mat-card-header>
+        <mat-form-field appearance="fill">
+            <mat-label>Title</mat-label>
+            <input matInput formControlName="title" required>
+        </mat-form-field>
+
+        <!-- Title: Error messages -->
+        <div *ngIf="titleCtrl.dirty && titleCtrl.hasError('required')">
+            Please enter a title
+        </div>
+        <div *ngIf="titleCtrl.dirty && titleCtrl.hasError('minlength')">
+            The title is too short
+        </div>
+        <div *ngIf="titleCtrl.dirty && titleCtrl.hasError('maxlength')">
+            The title is too long
+        </div>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Description</mat-label>
+            <input matInput formControlName="description">
+        </mat-form-field>
+
+        <!-- Description: Error message -->
+        <div *ngIf="descriptionCtrl.dirty && descriptionCtrl.hasError('maxlength')">
+            The description is too long
+        </div>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Img</mat-label>
+            <input matInput formControlName="image" required>
+        </mat-form-field>
+
+        <!-- Image link: Error messages -->
+        <div *ngIf="imageCtrl.dirty && imageCtrl.hasError('required')">
+            Please enter a link to the image
+        </div>
+        <div *ngIf="imageCtrl.dirty && imageCtrl.hasError('invalidImageLink')">
+            The image link is invalid
+        </div>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Link to video</mat-label>
+            <input matInput formControlName="video" required>
+        </mat-form-field>
+
+        <!-- Video link: Error messages -->
+        <div *ngIf="videoCtrl.dirty && videoCtrl.hasError('required')">
+            Please enter a link to the video
+        </div>
+        <div *ngIf="videoCtrl.dirty && videoCtrl.hasError('invalidVideoLink')">
+            The video link is invalid
+        </div>
+
+        <button mat-raised-button color="primary"
+            type="submit"
+            [disabled]="cardForm.invalid"
+            >Create a new card</button>
+    </form>
+</div>

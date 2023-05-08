@@ -1,0 +1,27 @@
+    <mat-card *ngIf="searchItem" class="example-card" [appCardBorder]="searchItem.snippet.publishedAt">
+        <img mat-card-image src="{{searchItem.snippet.thumbnails['default'].url}}" alt="">
+        <div class="card-statistics">
+            <p>{{searchItem.statistics.viewCount}}</p>
+            <p>{{searchItem.statistics.likeCount}}</p>
+            <p>{{searchItem.statistics.favoriteCount}}</p>
+            <p>{{searchItem.statistics.commentCount}}</p>
+        </div>
+        <mat-card-content>
+            <p>{{ searchItem.snippet.title }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" 
+                [routerLink]="[searchItem.id]" >more
+            </button>
+        </mat-card-actions>
+    </mat-card>
+
+    <mat-card *ngIf="cardItem" class="example-card">
+        <mat-card-content>
+            <p>{{ cardItem.title }}</p>
+            <p>{{ cardItem.description }}</p>
+            <p>{{ cardItem.img }}</p>
+            <p>{{ cardItem.video }}</p>
+        </mat-card-content>
+        
+    </mat-card>

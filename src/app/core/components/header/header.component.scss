@@ -1,0 +1,30 @@
+.header-search {
+    height: 15%;
+    background-color: #7a2744;
+    border-radius: 0 0 8px 8px;
+}
+
+.container-buttons-search {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+}
+
+.input-search {
+    flex-basis: 25%;
+    margin-top: 10px;
+}
+
+app-settings {
+    padding-left: 10px;
+}
+
+.user-menu {
+    flex-basis: 35%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.user-menu, .user-menu p {
+    padding-right: 10px;
+}

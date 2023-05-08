@@ -1,0 +1,24 @@
+<div class="search-resuts">
+    <app-search-item class="flex-card"
+        *ngFor='let card of customCards'
+        [cardItem]="card"
+     >
+    </app-search-item>
+</div>
+
+<div class="search-resuts">
+    <app-search-item class="flex-card"
+        *ngFor='let video of (videos$ |async)'
+        [searchItem]="video"
+     >
+    </app-search-item>
+</div>
+
+<!-- <div *ngIf="isSortingOn && !areResultsAvailable" class="search-resuts">
+    <app-search-item class="flex-card"
+        *ngFor='let result of (results | sorting)'
+        [searchItem]="result"
+     >
+    </app-search-item>
+</div> -->
+

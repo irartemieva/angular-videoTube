@@ -1,0 +1,57 @@
+<div class="header-search">
+    <!-- <app-search></app-search> -->
+    <div class="container-buttons-search">
+
+        <!-- Search videos -->
+        <mat-form-field 
+            class="example-full-width input-search" 
+            appearance="fill"
+            [color]="'primary'">
+            <input 
+                [disabled]="!authService.isLoggenIn"
+                matInput 
+                placeholder="What are you want to find out?" 
+                value="" 
+                #searchValue
+            >
+        </mat-form-field>
+        <button 
+            [disabled]="!authService.isLoggenIn"
+            mat-raised-button 
+            color="basic" 
+            routerLink="/videos"
+            (click)="searchResults(searchValue.value)">
+            Search
+        </button>
+        
+        <!-- Sorting -->
+        <!-- <app-settings 
+            (settingsEvent)="sortHeader($event)">
+        </app-settings> -->
+        <button 
+            [disabled]="!authService.isLoggenIn"
+            mat-raised-button 
+            color="basic" 
+            routerLink="/admin">
+            Create a card
+        </button>
+        
+        <!-- User information -->
+        <div class="user-menu">
+            <button 
+            (click)="authService.logout()"
+            *ngIf="authService.isLoggenIn"
+            mat-raised-button 
+            color="basic">
+            Logout
+        </button>
+            <p>Your Name</p>
+            <button 
+                mat-mini-fab 
+                color="basic"> 
+                <mat-icon>filter_list</mat-icon>
+            </button>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="login-form">
+  <form [formGroup]="userForm" (ngSubmit)="login()">
+    <mat-form-field appearance="fill">
+      <mat-label>Login</mat-label>
+      <input matInput formControlName="username" required>
+    </mat-form-field>
+
+    <!-- Username: Error messages -->
+    <div *ngIf="usernameCtrl.dirty && usernameCtrl.hasError('required')">
+      Username is required
+    </div>
+    <div *ngIf="usernameCtrl.dirty && usernameCtrl.hasError('email')">
+      Username should entered as email
+    </div>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your password</mat-label>
+      <input matInput [type]="'password'" formControlName="password" required>
+    </mat-form-field>
+
+    <!-- Password: Error messages -->
+    <div *ngIf="passwordCtrl.dirty && passwordCtrl.hasError('required')">
+      Password is required
+    </div>
+    <div *ngIf="passwordCtrl.dirty && passwordCtrl.hasError('invalidPass')">
+      Your password is not strong enough
+    </div>
+
+    <button type="submit" mat-raised-button color="basic" [disabled]="userForm.invalid">Login</button>
+  </form>
+</div>
