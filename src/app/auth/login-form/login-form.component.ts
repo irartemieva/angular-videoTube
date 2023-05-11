@@ -30,7 +30,7 @@ export class LoginFormComponent {
 
     this.authService.login().subscribe(() => {
       if (this.authService.isLoggenIn) {
-        const redirectUrl = '/videos';
+        const redirectUrl = '/';
 
         const navigationExtras: NavigationExtras = {
           queryParamsHandling: 'preserve',

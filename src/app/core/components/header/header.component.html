@@ -8,7 +8,6 @@
             appearance="fill"
             [color]="'primary'">
             <input 
-                [disabled]="!authService.isLoggenIn"
                 matInput 
                 placeholder="What are you want to find out?" 
                 value="" 
@@ -16,7 +15,6 @@
             >
         </mat-form-field>
         <button 
-            [disabled]="!authService.isLoggenIn"
             mat-raised-button 
             color="basic" 
             routerLink="/videos"
@@ -30,7 +28,7 @@
         </app-settings> -->
         <button 
             [disabled]="!authService.isLoggenIn"
-            mat-raised-button 
+            mat-raised-button
             color="basic" 
             routerLink="/admin">
             Create a card
@@ -38,19 +36,25 @@
         
         <!-- User information -->
         <div class="user-menu">
-            <button 
-            (click)="authService.logout()"
-            *ngIf="authService.isLoggenIn"
-            mat-raised-button 
-            color="basic">
-            Logout
-        </button>
-            <p>Your Name</p>
-            <button 
+            <button
+                mat-raised-button
+                color="basic"
+                routerLink="/auth">
+                Login
+            </button>
+            <button
+                (click)="authService.logout()"
+                *ngIf="authService.isLoggenIn"
+                mat-raised-button
+                color="basic">
+                Logout
+            </button>
+            <p *ngIf="authService.isLoggenIn">Your Name</p>
+            <!-- <button
                 mat-mini-fab 
                 color="basic"> 
                 <mat-icon>filter_list</mat-icon>
-            </button>
+            </button> -->
         </div>
 
     </div>
