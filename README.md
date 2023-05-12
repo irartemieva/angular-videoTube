@@ -14,6 +14,7 @@ Design was changed by me.
 
 ## Features that I am about to add
 - **Login** - save entered credentials to localStorage
+- **Login** - add pop-up window;
 - **Card Info** - change css styles
 - **Search** filters
 - Bug fix
