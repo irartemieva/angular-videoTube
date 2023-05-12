@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { Item } from '../../models/search-item.model';
 import { ResultsService } from '../../services/results.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-card-detailed-info',
@@ -17,7 +18,8 @@ export class CardDetailedInfoComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private resultsService: ResultsService
+    private resultsService: ResultsService,
+    private location: Location
   ) { }
 
   ngOnInit() {
@@ -25,6 +27,10 @@ export class CardDetailedInfoComponent implements OnInit {
       switchMap((params: ParamMap) => 
       this.resultsService.getVideo(params.get('id')!))
     )
+  }
+
+  back() {
+    this.location.back();
   }
 
 }

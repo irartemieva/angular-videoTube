@@ -4,14 +4,22 @@
 </div> -->
 
 <mat-card *ngIf="searchItem$ | async as item" class="example-card" [appCardBorder]="item.snippet.publishedAt">
-  <img mat-card-image src="{{item.snippet.thumbnails['standard'].url}}" alt="">
-  <div class="card-statistics">
+  <img mat-card-image src="{{item.snippet.thumbnails['high'].url}}" alt="">
+  <div class="card-data">
+    <mat-card-content>
+      <p>{{ item.snippet.title }}</p>
+    </mat-card-content>
+    <div class="card-statistics">
       <p>{{item.statistics.viewCount}}</p>
       <p>{{item.statistics.likeCount}}</p>
       <p>{{item.statistics.favoriteCount}}</p>
       <p>{{item.statistics.commentCount}}</p>
+    </div>
+    <button
+      mat-raised-button
+      color="basic"
+      (click)="back()">
+      Назад
+    </button>
   </div>
-  <mat-card-content>
-      <p>{{ item.snippet.title }}</p>
-  </mat-card-content>
 </mat-card>
