@@ -6,6 +6,7 @@ Design was changed by me.
 
 ## Main Features
 - **Login/Logout** page(authorization exists only on FE side yet);
+- **Login** - save entered credentials to localStorage
 - **Main** page - it is possible to enter and find some videos
 - **Card Info** - it is possible to select a video
 - I am using **RxJs** library for getting data from BE and manipulating with them
@@ -13,7 +14,6 @@ Design was changed by me.
 - **Admin** page(possibility to add a new card);
 
 ## Features that I am about to add
-- **Login** - save entered credentials to localStorage
 - **Login** - add pop-up window;
 - **Card Info** - change css styles
 - **Search** filters
