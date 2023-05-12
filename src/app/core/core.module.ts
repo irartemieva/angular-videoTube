@@ -8,6 +8,7 @@ import { MaterialExampleModule } from '../material.module';
 import { SortingComponent } from '../shared/sorting/sorting.component';
 import { YoutubeModule } from '../youtube/youtube.module';
 import { SharedModule } from '../shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     MaterialExampleModule,
+    FormsModule,
     //YoutubeModule,
     SharedModule,
     CoreRoutingModule

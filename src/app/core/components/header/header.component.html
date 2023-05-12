@@ -3,17 +3,14 @@
     <div class="container-buttons-search">
 
         <!-- Search videos -->
-        <mat-form-field 
-            class="example-full-width input-search" 
-            appearance="fill"
-            [color]="'primary'">
-            <input 
-                matInput 
-                placeholder="What are you want to find out?" 
-                value="" 
-                #searchValue
-            >
-        </mat-form-field>
+        <mat-form-field class="example-form-field">
+            <input matInput type="text" #searchValue>
+            <button *ngIf="searchValue" 
+                matSuffix mat-icon-button aria-label="Clear" 
+                (click)="searchValue.value=''">
+                <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
         <button 
             mat-raised-button 
             color="basic" 
