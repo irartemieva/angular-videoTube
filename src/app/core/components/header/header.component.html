@@ -34,6 +34,7 @@
         <!-- User information -->
         <div class="user-menu">
             <button
+                *ngIf="!authService.isLoggenIn"
                 mat-raised-button
                 color="basic"
                 routerLink="/auth">
