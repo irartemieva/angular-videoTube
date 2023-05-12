@@ -27,6 +27,7 @@ export class LoginFormComponent {
 
   login() {
     console.log(this.userForm.value);
+    localStorage.setItem('userName', this.userForm.value.username);
 
     this.authService.login().subscribe(() => {
       if (this.authService.isLoggenIn) {

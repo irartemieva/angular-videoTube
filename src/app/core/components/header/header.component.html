@@ -47,7 +47,7 @@
                 color="basic">
                 Logout
             </button>
-            <a *ngIf="authService.isLoggenIn">Your Name</a>
+            <a *ngIf="authService.isLoggenIn">{{ authService.userName }}</a>
             <!-- <button
                 mat-mini-fab 
                 color="basic"> 

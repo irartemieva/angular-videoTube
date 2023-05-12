@@ -12,16 +12,13 @@ import { AuthService } from 'src/app/auth/services/auth.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   constructor(
     private resultService: ResultsService,
     public authService: AuthService,
     private store: Store<{videos: Item[]}>
   ) { }
-
-  ngOnInit(): void {
-  }
 
   searchResults(value: string) {
     if (!value) return;
